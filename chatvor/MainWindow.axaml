@@ -1,0 +1,17 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" MaxHeight="300" MaxWidth="400" Background="Pink"
+        x:Class="chatvor.MainWindow"
+        Title="chatvor">
+        <Window.Styles>
+                <Style>
+                </Style>
+        </Window.Styles>
+        <Grid RowDefinitions="*,*,*">
+                <TextBlock Grid.Row="0" Text="Чатик" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="DeepPink"></TextBlock>
+                <TextBox Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Name="Box" Watermark="Имя" Background="Pink" BorderBrush="DeepPink" Foreground="DeepPink" FontWeight="Bold"></TextBox>
+                <Button Grid.Row="2" HorizontalAlignment="Center" Content="Вход" Background="DeepPink" Foreground="White"></Button>
+        </Grid>
+</Window>
