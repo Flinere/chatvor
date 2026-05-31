@@ -4,10 +4,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" 
         SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen"
         x:Class="chatvor.chat"
         Title="chat">
-
-        <Grid
+        
+    <Grid
         ShowGridLines="True"
         RowDefinitions="1,*,1"
         ColumnDefinitions="1,*,1"
@@ -15,11 +16,11 @@
         ColumnSpacing="10">
 
             <ListBox
+            x:Name="MessagesLB"
             Grid.Row="1"
             Grid.Column="1"
-            VerticalAlignment="Top"
-            x:Name="MessagesLB">
-		    </ListBox>
+            VerticalAlignment="Top">
+            </ListBox>
             
             <StackPanel
             VerticalAlignment="Bottom"
@@ -27,21 +28,24 @@
             Spacing="5">
 				
                 <TextBox
+                x:Name="TextMessageTB"
                 Watermark="Введите сообщение...">	
                 </TextBox>
 
                 <Button
+                x:Name="AddPictureB"
                 Content="➕"
                 ToolTip.Tip="Прикрепить вложение">	
                 </Button>
 
                 <Button
+                x:Name="SendMessageB"
                 Content="⤴️"
                 ToolTip.Tip="Отправить">	
                 </Button
 >
 
             </StackPanel>                
-        </Grid
->
+        </Grid>
+
 </Window>
