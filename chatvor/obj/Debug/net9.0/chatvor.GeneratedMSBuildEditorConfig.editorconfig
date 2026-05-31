@@ -7,6 +7,8 @@ build_property.AvaloniaNameGeneratorFilterByNamespace = *
 build_property.AvaloniaNameGeneratorViewFileNamingStrategy = NamespaceAndClassName
 build_property.AvaloniaNameGeneratorAttachDevTools = true
 build_property.TargetFramework = net9.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v9.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
 build_property.ProjectTypeGuids = 
@@ -15,17 +17,17 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = chatvor
-build_property.ProjectDir = C:\Users\sekibanki\RiderProjects\chatvor\chatvor\
+build_property.ProjectDir = C:\Users\GoosE\source\repos\chatvor\chatvor\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/sekibanki/RiderProjects/chatvor/chatvor/App.axaml]
+[C:/Users/GoosE/source/repos/chatvor/chatvor/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/sekibanki/RiderProjects/chatvor/chatvor/chat.axaml]
+[C:/Users/GoosE/source/repos/chatvor/chatvor/chat.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/sekibanki/RiderProjects/chatvor/chatvor/MainWindow.axaml]
+[C:/Users/GoosE/source/repos/chatvor/chatvor/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

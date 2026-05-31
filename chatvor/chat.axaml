@@ -2,10 +2,46 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" 
+        SizeToContent="WidthAndHeight"
         x:Class="chatvor.chat"
         Title="chat">
-        <Grid>
-                
-        </Grid>
+
+        <Grid
+        ShowGridLines="True"
+        RowDefinitions="1,*,1"
+        ColumnDefinitions="1,*,1"
+        RowSpacing="10"
+        ColumnSpacing="10">
+
+            <ListBox
+            Grid.Row="1"
+            Grid.Column="1"
+            VerticalAlignment="Top"
+            x:Name="MessagesLB">
+		    </ListBox>
+            
+            <StackPanel
+            VerticalAlignment="Bottom"
+            Orientation="Horizontal"
+            Spacing="5">
+				
+                <TextBox
+                Watermark="Введите сообщение...">	
+                </TextBox>
+
+                <Button
+                Content="➕"
+                ToolTip.Tip="Прикрепить вложение">	
+                </Button>
+
+                <Button
+                Content="⤴️"
+                ToolTip.Tip="Отправить">	
+                </Button
+>
+
+            </StackPanel>                
+        </Grid
+>
 </Window>
