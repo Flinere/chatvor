@@ -71,3 +71,8 @@ C:\Users\sekibanki\RiderProjects\chatvor\chatvor\obj\Debug\net9.0\refint\chatvor
 C:\Users\sekibanki\RiderProjects\chatvor\chatvor\obj\Debug\net9.0\chatvor.pdb
 C:\Users\sekibanki\RiderProjects\chatvor\chatvor\obj\Debug\net9.0\chatvor.genruntimeconfig.cache
 C:\Users\sekibanki\RiderProjects\chatvor\chatvor\obj\Debug\net9.0\ref\chatvor.dll
+C:\Users\GoosE\source\repos\chatvor\chatvor\obj\Debug\net9.0\chatvor.csproj.AssemblyReference.cache
+C:\Users\GoosE\source\repos\chatvor\chatvor\obj\Debug\net9.0\Avalonia\Resources.Inputs.cache
+C:\Users\GoosE\source\repos\chatvor\chatvor\obj\Debug\net9.0\chatvor.dll
+C:\Users\GoosE\source\repos\chatvor\chatvor\obj\Debug\net9.0\refint\chatvor.dll
+C:\Users\GoosE\source\repos\chatvor\chatvor\obj\Debug\net9.0\chatvor.pdb
