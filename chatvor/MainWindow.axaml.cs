@@ -12,8 +12,8 @@ public partial class MainWindow : Window
     private TcpClient client;
     private NetworkStream stream;
     private string userName;
-    private string ipAddress = "172.128.135.102";
-    private int port = 13000;
+    private string ipAddress = "172.28.135.73";
+    private int port = 443;
     public MainWindow()
     {
         InitializeComponent();

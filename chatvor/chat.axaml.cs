@@ -19,15 +19,12 @@ public partial class chat : Window
     public string name;
     public NetworkStream stream;
     ObservableCollection<string> chates;
-    public chat()
+
+    public chat(TcpClient client, string name, NetworkStream stream)
     {
         InitializeComponent();
         chates = new ObservableCollection<string>();
         MessagesLB.ItemsSource = chates;
-    }
-
-    public chat(TcpClient client, string name, NetworkStream stream)
-    {
         this.client = client;
         this.name = name;
         this.stream = stream;
@@ -45,7 +42,7 @@ public partial class chat : Window
         TextMessageTB.Text = "";
     }
     
-    public async void SendPhoto_Click(object sender, RoutedEventArgs e)
+    /*public async void SendPhoto_Click(object sender, RoutedEventArgs e)
     {
         var files = await StorageProvider.OpenFilePickerAsync(
             new Avalonia.Platform.Storage.FilePickerOpenOptions
@@ -60,11 +57,11 @@ public partial class chat : Window
             using var ms = new MemoryStream();
             await fs.CopyToAsync(ms);
             
-            string msg = "[vibe]" + Convert.ToBase64String(ms.ToArray()) + "[/vibe]";
+            string msg = "[PHOTO]" + Convert.ToBase64String(ms.ToArray()) + "[/PHOTO]";
             byte[] data = Encoding.UTF8.GetBytes(msg);
             await stream.WriteAsync(data, 0, data.Length);
         }
-    }
+    }*/
     
     private async Task ReceiveMessagesAsync()
     {
@@ -81,7 +78,7 @@ public partial class chat : Window
                 
                 Dispatcher.UIThread.Post(() => 
                 {
-                    if (message.StartsWith("[vibe]") && message.EndsWith("[/vibe]"))
+                    if (message.StartsWith("[PHOTO]") && message.EndsWith("[/PHOTO]"))
                     {
                         string base64 = message.Substring(7, message.Length - 15);
                         byte[] imgBytes = Convert.FromBase64String(base64);
