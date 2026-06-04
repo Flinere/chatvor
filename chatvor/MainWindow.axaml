@@ -12,6 +12,6 @@
         <Grid RowDefinitions="*,*,*">
                 <TextBlock Grid.Row="0" Text="Чатик" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="DeepPink"></TextBlock>
                 <TextBox Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Name="Box" Watermark="Имя" Background="Pink" BorderBrush="DeepPink" Foreground="DeepPink" FontWeight="Bold"></TextBox>
-                <Button Grid.Row="2" HorizontalAlignment="Center" Content="Вход" Background="DeepPink" Foreground="White"></Button>
+                <Button Grid.Row="2" HorizontalAlignment="Center" Content="Вход" Background="DeepPink" Foreground="White" Click="Button_OnClick"></Button>
         </Grid>
 </Window>
