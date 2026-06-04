@@ -76,3 +76,4 @@ C:\Users\GoosE\source\repos\chatvor\chatvor\obj\Debug\net9.0\Avalonia\Resources.
 C:\Users\GoosE\source\repos\chatvor\chatvor\obj\Debug\net9.0\chatvor.dll
 C:\Users\GoosE\source\repos\chatvor\chatvor\obj\Debug\net9.0\refint\chatvor.dll
 C:\Users\GoosE\source\repos\chatvor\chatvor\obj\Debug\net9.0\chatvor.pdb
+C:\Users\sekibanki\RiderProjects\chatvor\chatvor\obj\Debug\net9.0\chatvor.sourcelink.json

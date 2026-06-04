@@ -6,25 +6,27 @@
         SizeToContent="WidthAndHeight"
         WindowStartupLocation="CenterScreen"
         x:Class="chatvor.chat"
-        Title="chat">
+        Title="chat" Background="Pink">
         
     <Grid
         ShowGridLines="True"
-        RowDefinitions="1,*,1"
+        RowDefinitions="*,*,*"
         ColumnDefinitions="1,*,1"
-        RowSpacing="10"
-        ColumnSpacing="10">
+        RowSpacing="300"
+        ColumnSpacing="200">
 
             <ListBox
             x:Name="MessagesLB"
             Grid.Row="1"
             Grid.Column="1"
-            VerticalAlignment="Top">
+            VerticalAlignment="Top"
+            Background="Gray">
             </ListBox>
             
-            <StackPanel
+            <StackPanel Grid.Column="1" Grid.Row="2"
             VerticalAlignment="Bottom"
             Orientation="Horizontal"
+            Margin="0,0,0,30"
             Spacing="5">
 				
                 <TextBox
@@ -35,16 +37,16 @@
                 <Button
                 x:Name="AddPictureB"
                 Content="➕"
-                ToolTip.Tip="Прикрепить вложение">	
+                ToolTip.Tip="Прикрепить вложение"
+                Click="SendPhoto_Click">
                 </Button>
 
                 <Button
                 x:Name="SendMessageB"
                 Content="⤴️"
+                Click="SendText_Click"
                 ToolTip.Tip="Отправить">	
-                </Button
->
-
+                </Button>
             </StackPanel>                
         </Grid>
 
