@@ -42,7 +42,7 @@ public partial class chat : Window
         TextMessageTB.Text = "";
     }
     
-    /*public async void SendPhoto_Click(object sender, RoutedEventArgs e)
+    public async void SendPhoto_Click(object sender, RoutedEventArgs e)
     {
         var files = await StorageProvider.OpenFilePickerAsync(
             new Avalonia.Platform.Storage.FilePickerOpenOptions
@@ -57,11 +57,11 @@ public partial class chat : Window
             using var ms = new MemoryStream();
             await fs.CopyToAsync(ms);
             
-            string msg = "[PHOTO]" + Convert.ToBase64String(ms.ToArray()) + "[/PHOTO]";
+            string msg = Convert.ToBase64String(ms.ToArray());
             byte[] data = Encoding.UTF8.GetBytes(msg);
             await stream.WriteAsync(data, 0, data.Length);
         }
-    }*/
+    }
     
     private async Task ReceiveMessagesAsync()
     {
@@ -76,20 +76,9 @@ public partial class chat : Window
                 
                 string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
                 
-                Dispatcher.UIThread.Post(() => 
-                {
-                    if (message.StartsWith("[PHOTO]") && message.EndsWith("[/PHOTO]"))
-                    {
-                        string base64 = message.Substring(7, message.Length - 15);
-                        byte[] imgBytes = Convert.FromBase64String(base64);
-                        using var ms = new MemoryStream(imgBytes);
-                        chates.Add(new Bitmap(ms).ToString());
-                    }
-                    else
-                    {
+                
                         chates.Add(message);
-                    }
-                });
+               
             }
         }
         catch (Exception ex)

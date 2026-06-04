@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("chatvor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d871ba1d8e6bf31771805bd5a699547722e43e1b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fc4cea85290fdb69d323988a22ef60c31ae5551")]
 [assembly: System.Reflection.AssemblyProductAttribute("chatvor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("chatvor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
