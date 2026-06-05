@@ -12,18 +12,19 @@ using Avalonia.Threading;
 using Avalonia.Media.Imaging;
 using Avalonia.VisualTree;
 
+
 namespace chatvor;
 public partial class chat : Window
 {
     public TcpClient client;
     public string name;
     public NetworkStream stream;
-    ObservableCollection<string> chates;
+    ObservableCollection<object> chates;
 
     public chat(TcpClient client, string name, NetworkStream stream)
     {
         InitializeComponent();
-        chates = new ObservableCollection<string>();
+        chates = new ObservableCollection<object>();
         MessagesLB.ItemsSource = chates;
         this.client = client;
         this.name = name;
@@ -36,8 +37,8 @@ public partial class chat : Window
         {
             return;
         }
-        
-        byte[] data = Encoding.UTF8.GetBytes(TextMessageTB.Text);
+        string msg = "0" + TextMessageTB.Text;
+        byte[] data = Encoding.UTF8.GetBytes(msg);
         await stream.WriteAsync(data, 0, data.Length);
         TextMessageTB.Text = "";
     }
@@ -57,7 +58,7 @@ public partial class chat : Window
             using var ms = new MemoryStream();
             await fs.CopyToAsync(ms);
             
-            string msg = Convert.ToBase64String(ms.ToArray());
+            string msg = "1" + Convert.ToBase64String(ms.ToArray());
             byte[] data = Encoding.UTF8.GetBytes(msg);
             await stream.WriteAsync(data, 0, data.Length);
         }
@@ -65,7 +66,7 @@ public partial class chat : Window
     
     private async Task ReceiveMessagesAsync()
     {
-        byte[] buffer = new byte[65536];
+        byte[] buffer = new byte[100000];
         
         try
         {
@@ -75,10 +76,22 @@ public partial class chat : Window
                 if (bytesRead == 0) break;
                 
                 string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                
-                
-                        chates.Add(message);
-               
+                Dispatcher.UIThread.Post(() => 
+                {
+                    if (message.Length > 0 && message[0] == '1')
+                    {
+                        string base64 = message.Substring(1); 
+                        byte[] imgBytes = Convert.FromBase64String(base64);
+                        using var ms = new MemoryStream(imgBytes);
+                        var bitmap = new Bitmap(ms);
+                        chates.Add(bitmap);
+                    }
+                    else if (message.Length > 0 && message[0] == '0')
+                    {
+                        string text = message.Substring(1); 
+                        chates.Add(text);
+                    }
+                });
             }
         }
         catch (Exception ex)

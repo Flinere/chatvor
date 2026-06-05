@@ -34,12 +34,12 @@
                 Watermark="Введите сообщение...">	
                 </TextBox>
 
-                <!--<Button
+                <Button
                 x:Name="AddPictureB"
                 Content="➕"
                 ToolTip.Tip="Прикрепить вложение"
                 Click="SendPhoto_Click">
-                </Button>-->
+                </Button>
 
                 <Button
                 x:Name="SendMessageB"
